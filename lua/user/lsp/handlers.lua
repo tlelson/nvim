@@ -72,9 +72,13 @@ M.on_attach = function(client, bufnr)
   if client.name == "tsserver" then
     client.resolved_capabilities.document_formatting = false
   end
+  if client.name == "yamlls" then -- handled by prettier
+    client.resolved_capabilities.document_formatting = false
+  end
   if client.name == "gopls" then
     client.resolved_capabilities.diagnostic = false
   end
+  print("about to do keymaps:", client.name)
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
 end

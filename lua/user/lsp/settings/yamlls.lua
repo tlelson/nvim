@@ -1,12 +1,13 @@
+
 return {
   settings = {
     yaml = {
+      -- Couldn't get formatting to work here. Overriden with null-ls
       format = {
-        enable = true,
+        printWidth = 100,
+        singleQuote = true,
       },
-      hover = true,
       completion = true,
-
       customTags = {
         "!fn",
         "!And",

@@ -5,7 +5,9 @@ end
 
 local lspconfig = require("lspconfig")
 
-local servers = { "jsonls", "sumneko_lua" }
+-- Add servers here and create a settings file if needed. 
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+local servers = { "jsonls", "sumneko_lua" , "yamlls", "gopls"}
 
 lsp_installer.setup {
 	ensure_installed = servers

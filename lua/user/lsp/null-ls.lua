@@ -9,8 +9,8 @@ if not ok then
 	return
 end
 
--- Test DIAGNOSTICS to make sure it works: 
--- https://github.com/jose-elias-alvarez/null-ls.nvim#parsing-buffer-content 
+-- Test DIAGNOSTICS to make sure it works:
+-- https://github.com/jose-elias-alvarez/null-ls.nvim#parsing-buffer-content
 local no_really = {
 	method = null_ls.methods.DIAGNOSTICS,
 	filetypes = { "markdown", "text" },
@@ -49,15 +49,14 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
 	debug = true,
 	sources = {
-		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
+		formatting.prettier,  -- use .editorconfig
 		formatting.black.with({ extra_args = { "--fast" } }),
-		formatting.stylua,
+		--formatting.stylua,  -- Sumneko lua handles this
 		diagnostics.flake8,
-		diagnostics.cfn_lint,
+		diagnostics.cfn_lint.with({ filetypes = { "cfn" } }),
 		-- default args to golangci use `--fast` which hide errors
 		diagnostics.golangci_lint.with({
 			args = { "run", "-v", "--fix=false", "--out-format=json", "$DIRNAME", "--path-prefix", "$ROOT" }
 		}),
 	},
 })
-
