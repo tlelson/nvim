@@ -52,7 +52,7 @@ null_ls.setup({
 		formatting.prettier,  -- use .editorconfig
 		formatting.black.with({ extra_args = { "--fast" } }),
 		--formatting.stylua,  -- Sumneko lua handles this
-		diagnostics.flake8,
+		--diagnostics.flake8,
 		diagnostics.cfn_lint.with({ filetypes = { "cfn" } }),
 		-- default args to golangci use `--fast` which hide errors
 		diagnostics.golangci_lint.with({
