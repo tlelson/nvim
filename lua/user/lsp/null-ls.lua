@@ -3,12 +3,6 @@ if not null_ls_status_ok then
 	print("Couldn't require 'null-ls'!")
 	return
 end
-local ok, null_helpers = pcall(require, 'null-ls.helpers')
-if not ok then
-	print("Couldn't require 'null-ls.helpers'!")
-	return
-end
-
 -- Test DIAGNOSTICS to make sure it works:
 -- https://github.com/jose-elias-alvarez/null-ls.nvim#parsing-buffer-content
 local no_really = {
