@@ -1,1 +1,1 @@
-let @i = "# fmt: off\nimport ipdb; ipdb.set_trace()  # fmt: on"
+let @i = "import ipdb; ipdb.set_trace()"
