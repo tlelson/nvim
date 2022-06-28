@@ -2,8 +2,10 @@
 
 -- Cloudformation
 if not vim.endswith(vim.bo.filetype, 'cfn') then -- don't endlessly loop
-	-- Scan first 3 lines for CFN giveaway
-	local lines = vim.api.nvim_buf_get_lines(0, 0, 3, 0)
+	-- Scan all lines for CFN giveaway
+	-- If this becomes slow, limit to first 3 and add pcall to deal with empty files
+	local lines = vim.api.nvim_buf_get_lines(0, 0, -1, 0)
+
 	for _, line in pairs(lines) do
 		if line:find('AWSTemplateFormatVersion') ~= nil then
 			print('Cloudformation detected')
