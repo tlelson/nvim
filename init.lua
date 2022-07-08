@@ -11,3 +11,11 @@ require "user.nerdcommenter"
 require "user.autopairs"
 require "user.rainbow_csv"
 require "user.lualine"
+require "user.gitlinker"
+
+-- OS specific settings
+local uname = vim.loop.os_uname()
+if string.find(uname.release, "WSL") then
+	print("OS: WSL ...")
+	require "user.wsl"
+end
