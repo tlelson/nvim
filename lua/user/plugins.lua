@@ -100,6 +100,10 @@ return packer.startup(function(use)
     branch = 'dev',
   }
   use 'mechatroner/rainbow_csv'
+  use {
+    'ruifm/gitlinker.nvim',
+    requires = 'nvim-lua/plenary.nvim',
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
