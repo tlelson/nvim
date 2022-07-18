@@ -87,6 +87,7 @@ return packer.startup(function(use)
   -- My Pluggins
   use 'tpope/vim-unimpaired'
   use 'tpope/vim-fugitive'
+  use 'tpope/vim-rhubarb' -- Provides github linking for GBrowse! fugitive command
   use 'tpope/vim-sensible'
   use 'tpope/vim-surround'
   use 'tpope/vim-endwise'
@@ -100,10 +101,6 @@ return packer.startup(function(use)
     branch = 'dev',
   }
   use 'mechatroner/rainbow_csv'
-  use {
-    'ruifm/gitlinker.nvim',
-    requires = 'nvim-lua/plenary.nvim',
-  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
