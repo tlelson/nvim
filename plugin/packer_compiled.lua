@@ -224,6 +224,11 @@ _G.packer_plugins = {
     path = "/home/delubu/.local/share/nvim/site/pack/packer/start/vim-notebook",
     url = "https://github.com/tlelson/vim-notebook"
   },
+  ["vim-rhubarb"] = {
+    loaded = true,
+    path = "/home/delubu/.local/share/nvim/site/pack/packer/start/vim-rhubarb",
+    url = "https://github.com/tpope/vim-rhubarb"
+  },
   ["vim-sensible"] = {
     loaded = true,
     path = "/home/delubu/.local/share/nvim/site/pack/packer/start/vim-sensible",
