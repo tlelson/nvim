@@ -58,3 +58,40 @@ vim.cmd [[
     \ 	"rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1,
     \   {'dir': expand('%:p:h')}, <bang>0)
 ]]
+
+-- Modified version from: https://gist.github.com/davidmh/f35fba1f9cde176d1ec9b4919769653a#file-quickfix-fzf-vim
+-- Significant changes to allow previewing. The `column` and `options` are taken from fzf#grep command.
+vim.cmd [[ 
+  function! s:format_qf_line(line)
+    let parts = split(a:line, ':')
+    return { 'filename': parts[0]
+           \,'lnum': parts[1]
+           \,'col': parts[2]
+           \,'text': join(parts[3:], ':')
+           \ }
+  endfunction
+
+  " This basically turns the quickfix list into the output format of vimgrep
+  " ref: rg --vimgrep
+  function! s:qf_to_fzf(key, line) abort
+    let l:filepath = expand('#' . a:line.bufnr)
+    return l:filepath . ':' . a:line.lnum . ':' . a:line.col . ':' . a:line.text
+  endfunction
+
+  function! s:fzf_to_qf(filtered_list) abort
+    let list = map(a:filtered_list, 's:format_qf_line(v:val)')
+    if len(list) > 0
+      call setqflist(list)
+      copen
+    endif
+  endfunction
+
+  command! FzfQF call fzf#run(fzf#wrap(fzf#vim#with_preview({
+        \ 'source': map(getqflist(), function('<sid>qf_to_fzf')),
+        \ 'sink*':   function('<sid>fzf_to_qf'),
+        \ 'column':  1,
+        \ 'options': ['--ansi', '--prompt', 'FzfQF> ',
+        \             '--multi', '--bind', 'alt-a:select-all,alt-d:deselect-all',
+        \             '--delimiter', ':', '--preview-window', '+{2}-/2']
+        \ })))
+]]
