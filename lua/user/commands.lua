@@ -45,10 +45,13 @@ vim.cmd [[
   " Have Ripgrep start from the current buffers git root, not the cwd of the
   " file first opened in vim. Think scenario when you jumped to a
   " library
-  command! -bang -nargs=* Rg
+  command! -bang -nargs=* RG
     \ call fzf#vim#grep(
     \ 	"rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1,
-    \   {'dir': system('git -C '.expand('%:p:h').' rev-parse --show-toplevel 2> /dev/null')[:-2]}, <bang>0)
+    \   fzf#vim#with_preview({
+    \     'dir': system('git -C '.expand('%:p:h').' rev-parse --show-toplevel 2> /dev/null')[:-2]
+    \   }), 
+    \   <bang>0)
 
   " For when you have no git root or when you want to search
   " outside it.  Open a file below which you want to search then
@@ -56,7 +59,7 @@ vim.cmd [[
   command! -bang -nargs=* RgCWD
     \ call fzf#vim#grep(
     \ 	"rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1,
-    \   {'dir': expand('%:p:h')}, <bang>0)
+    \   fzf#vim#with_preview({'dir': expand('%:p:h')}), <bang>0)
 ]]
 
 -- Modified version from: https://gist.github.com/davidmh/f35fba1f9cde176d1ec9b4919769653a#file-quickfix-fzf-vim
