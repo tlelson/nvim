@@ -60,6 +60,12 @@ vim.cmd [[
     \ call fzf#vim#grep(
     \ 	"rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1,
     \   fzf#vim#with_preview({'dir': expand('%:p:h')}), <bang>0)
+
+  " FZF for all vim runtime files
+  command! VimRuntime call fzf#run(fzf#wrap({
+    \ 'source': split(substitute(execute('scriptnames'), ' *\d*: ', '', 'g'), "\n"),
+    \ 'options': ['--prompt', 'Vim> ', '--nth=1'],
+    \ }))
 ]]
 
 -- Modified version from: https://gist.github.com/davidmh/f35fba1f9cde176d1ec9b4919769653a#file-quickfix-fzf-vim
