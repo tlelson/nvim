@@ -42,6 +42,25 @@ vim.cmd [[
   " By default it uses find and skips hidden files. This respects .ripgreprc
   let $FZF_DEFAULT_COMMAND = 'rg --files 2> /dev/null'
 
+  " Have Ripgrep start from the current buffers git root, not the cwd of the
+  " file first opened in vim. Think scenario when you jumped to a
+  " library
+  command! -bang -nargs=* RG
+    \ call fzf#vim#grep(
+    \ 	"rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1,
+    \   fzf#vim#with_preview({
+    \     'dir': system('git -C '.expand('%:p:h').' rev-parse --show-toplevel 2> /dev/null')[:-2]
+    \   }), 
+    \   <bang>0)
+
+  " For when you have no git root or when you want to search
+  " outside it.  Open a file below which you want to search then
+  " RgCWD
+  command! -bang -nargs=* RgCWD
+    \ call fzf#vim#grep(
+    \ 	"rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1,
+    \   fzf#vim#with_preview({'dir': expand('%:p:h')}), <bang>0)
+
   " FZF for all vim runtime files
   command! VimRuntime call fzf#run(fzf#wrap({
     \ 'source': split(substitute(execute('scriptnames'), ' *\d*: ', '', 'g'), "\n"),
