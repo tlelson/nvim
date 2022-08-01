@@ -47,19 +47,12 @@ vim.cmd [[
   " library
   command! -bang -nargs=* RG
     \ call fzf#vim#grep(
-    \ 	"rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1,
+    \ 	"rg --column --line-number --no-heading --color=always --smart-case -- ".shellescape(<q-args>), 1,
     \   fzf#vim#with_preview({
-    \     'dir': system('git -C '.expand('%:p:h').' rev-parse --show-toplevel 2> /dev/null')[:-2]
+    \     'dir': system('git -C '.expand('%:p:h').' rev-parse --show-toplevel 2> /dev/null')[:-2],
+    \     'options': ['--prompt', 'RG> '],
     \   }), 
-    \   <bang>0)
-
-  " For when you have no git root or when you want to search
-  " outside it.  Open a file below which you want to search then
-  " RgCWD
-  command! -bang -nargs=* RgCWD
-    \ call fzf#vim#grep(
-    \ 	"rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1,
-    \   fzf#vim#with_preview({'dir': expand('%:p:h')}), <bang>0)
+    \   <bang>0),
 
   " FZF for all vim runtime files
   command! VimRuntime call fzf#run(fzf#wrap({
