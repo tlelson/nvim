@@ -52,7 +52,7 @@ vim.cmd [[
     \     'dir': system('git -C '.expand('%:p:h').' rev-parse --show-toplevel 2> /dev/null')[:-2],
     \     'options': ['--prompt', 'RG> '],
     \   }), 
-    \   <bang>0),
+    \   <bang>0)
 
   " FZF for all vim runtime files
   command! VimRuntime call fzf#run(fzf#wrap({
