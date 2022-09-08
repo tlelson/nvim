@@ -45,7 +45,7 @@ local options = {
   cindent = false, 			   -- This should only be set for C files.  It jumps to 0 when you hit #
   autoindent = true,
   listchars = "eol:$,tab:>-,trail:~,extends:>,precedes:<",
-  textwidth = 120			   -- Arbitary but practical for splitscreen vim on a laptop. Override in ftplugin files
+  textwidth = 98			   -- Arbitary but practical for splitscreen vim on a laptop. Override in ftplugin files
 }
 
 vim.opt.shortmess:append "c"
@@ -83,4 +83,7 @@ vim.cmd [[
 	    set paste " let &paste = 1
 	    return ""
 	  endfunction
+
+  " Shrug emoji into register
+  let @s = "¯\_(ツ)_/¯"
 ]]

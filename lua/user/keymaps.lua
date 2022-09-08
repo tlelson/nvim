@@ -41,4 +41,5 @@ keymap("n", "<C-w>]", ":vsplit +tag <C-r><C-w><CR>", opts) -- TODO: Test. The an
 
 -- Plugin: FZF
 keymap('n', 'q/', ':History:<CR>', opts)
-keymap('n', '<leader>rg', ":execute 'Rg ' . expand('<cword>')<CR>", opts)
+keymap('n', '<leader>rg', ":execute 'RG ' . expand('<cword>')<CR>", opts)
+keymap('n', '<leader>bl', ":execute 'BLines ' . expand('<cword>')<CR>", opts)

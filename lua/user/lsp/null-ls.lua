@@ -49,5 +49,8 @@ null_ls.setup({
 		diagnostics.golangci_lint.with({
 			args = { "run", "-v", "--fix=false", "--out-format=json", "$DIRNAME", "--path-prefix", "$ROOT" }
 		}),
+		null_ls.builtins.code_actions.shellcheck,
+		diagnostics.shellcheck,
+		formatting.beautysh,
 	},
 })

@@ -74,7 +74,10 @@ return packer.startup(function(use)
     'junegunn/fzf',
     run = './install --all',
   }
-  use 'junegunn/fzf.vim'
+  use {
+    'junegunn/fzf.vim',
+    commit = 'dff3ad4', -- Commits after this break the RG command 
+  }
 
   -- Treesitter
   use {

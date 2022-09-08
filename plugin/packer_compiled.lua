@@ -119,11 +119,6 @@ _G.packer_plugins = {
     path = "/home/delubu/.local/share/nvim/site/pack/packer/start/fzf.vim",
     url = "https://github.com/junegunn/fzf.vim"
   },
-  ["gitlinker.nvim"] = {
-    loaded = true,
-    path = "/home/delubu/.local/share/nvim/site/pack/packer/start/gitlinker.nvim",
-    url = "https://github.com/ruifm/gitlinker.nvim"
-  },
   nerdcommenter = {
     loaded = true,
     path = "/home/delubu/.local/share/nvim/site/pack/packer/start/nerdcommenter",
