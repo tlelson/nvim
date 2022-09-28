@@ -9,7 +9,7 @@ local lspconfig = require("lspconfig")
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 local servers = {
 	"yamlls", "jsonls", "sumneko_lua", "gopls", "pylsp", "prosemd_lsp", "tflint", "tsserver",
-	"graphql", "vimls", "bashls"
+	"graphql", "vimls", "bashls", "powershell_es",
 }
 
 lsp_installer.setup({
