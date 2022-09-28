@@ -41,7 +41,7 @@ null_ls.register(no_really)
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
-	debug = true,
+	debug = false,
 	sources = {
 		formatting.prettier,  -- use .editorconfig
 		diagnostics.cfn_lint.with({ filetypes = { "cfn" } }),
