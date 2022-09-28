@@ -1,5 +1,6 @@
 local options = {
-  autochdir = true, -- Changes working dir to current file.  Could be a nightmare. Testing only at this stage.
+  -- if using autochdir breaks Rg command, try pinning fzf.vim to `--commit = 'dff3ad4'`
+  autochdir = false,			  -- Changes working dir to current file.
   backup = false,                          -- creates a backup file
   --clipboard = "unnamedplus",               -- deleting text will overwrite the system clipboard. set to reg "+ manually
   cmdheight = 2,                           -- more space in the neovim command line for displaying messages
