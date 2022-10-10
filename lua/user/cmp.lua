@@ -58,7 +58,7 @@ cmp.setup {
   sources = {
     { name = "nvim_lsp" },
     { name = "luasnip" },
-    { name = "cmdline" },
+    --{ name = "cmdline" },  -- this does dumb vim cmd suggestions like 'Variable !'
     { name = "path" },
     { name = "buffer" },
   },
