@@ -43,14 +43,19 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
 	debug = false,
 	sources = {
+		null_ls.builtins.completion.spell,
+
 		formatting.prettier,  -- use .editorconfig
 		diagnostics.cfn_lint.with({ filetypes = { "cfn" } }),
 		-- default args to golangci use `--fast` which hide errors
 		diagnostics.golangci_lint.with({
 			args = { "run", "-v", "--fix=false", "--out-format=json", "$DIRNAME", "--path-prefix", "$ROOT" }
 		}),
+		-- Bash/Sh
 		null_ls.builtins.code_actions.shellcheck,
 		diagnostics.shellcheck,
 		formatting.beautysh,
+		-- Python
+		--formatting.isort,
 	},
 })
