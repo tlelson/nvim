@@ -12,6 +12,8 @@ local servers = {
 	"graphql", "vimls", "bashls", "powershell_es",
 }
 
+
+-- Once pylsp is setup, install the mypy extension with `:PylspInstall pylsp-mypy`
 lsp_installer.setup({
 	ensure_installed = servers,
 })

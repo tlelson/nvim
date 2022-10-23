@@ -7,6 +7,11 @@ return {
           ignore = { 'E501' },
           maxLineLength = 100
         },
+        pylsp_mypy = {
+            enabled = true,
+            live_mode = true,
+            strict = true,
+        }
       }
     }
   }
