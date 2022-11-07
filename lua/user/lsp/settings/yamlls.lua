@@ -8,6 +8,9 @@ return {
         singleQuote = true,
       },
       completion = true,
+      schemaStore = {
+        enable = true,
+      },
       customTags = {
         -- Cloudformation Tags
         "!Base64 scalar",
