@@ -75,21 +75,27 @@ local function lsp_keymaps(bufnr)
 		'<cmd>lua vim.diagnostic.open_float({ border = "rounded" })<CR>',
 		opts
 	)
-	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
+	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format({async = true})' ]])
 end
 
 M.on_attach = function(client, bufnr)
 	-- vim.notify(client.name .. " starting...")
 	-- TODO: refactor this into a method that checks if string in list
+
+	-- Disable specific lsp features. Find out what features are available with:
+	-- :lua =vim.lsp.get_active_clients()[1].server_capabilities
+	-- ... when an LSP is runing in the buffer
+
 	if client.name == "tsserver" then
-		client.resolved_capabilities.document_formatting = false
+		client.server_capabilities.documentFormattingProvider = false
 	end
 	if client.name == "yamlls" then -- handled by prettier
-		client.resolved_capabilities.document_formatting = false
+		client.server_capabilities.documentFormattingProvider = false
 	end
-	if client.name == "gopls" then
-		client.resolved_capabilities.diagnostic = false
-	end
+	-- No attempts to disable gopls diagnostics works. not this, not at the gopls settings
+	--if client.name == "gopls" then
+		--client.server_capabilities.diagnostic = false -- does not work
+	--end
 	lsp_keymaps(bufnr)
 	lsp_highlight_document(client)
 end
