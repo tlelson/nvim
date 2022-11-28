@@ -98,11 +98,19 @@ return packer.startup(function(use)
   use 'scrooloose/nerdcommenter'
   use 'vim-airline/vim-airline'
   use 'airblade/vim-gitgutter'
-  use {
-    'tlelson/vim-notebook',
-    branch = 'dev',
-  }
   use 'mechatroner/rainbow_csv'
+
+  -- Experimental 
+  use {
+    "akinsho/toggleterm.nvim", 
+    tag = '*', 
+    --insert_mappings = false,
+    --terminal_mappings = false,
+    autochdir = true,
+    config = function()
+      require("toggleterm").setup()
+    end
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
