@@ -1,7 +1,21 @@
+-- Set colorscheme
+--vim.cmd [[colorscheme onedark]]
+vim.cmd [[
+try
+  colorscheme darkplus
+catch /^Vim\%((\a\+)\)\=:E185/
+  colorscheme default
+  set background=dark
+endtry
+" Reset the background to the normal one in the terminal
+highlight Normal guibg=none guifg=none
+]]
+
 local options = {
   -- if using autochdir breaks Rg command, try pinning fzf.vim to `--commit = 'dff3ad4'`
   autochdir = false,			  -- Changes working dir to current file.
   backup = false,                          -- creates a backup file
+  breakindent = true,
   --clipboard = "unnamedplus",               -- deleting text will overwrite the system clipboard. set to reg "+ manually
   cmdheight = 2,                           -- more space in the neovim command line for displaying messages
   completeopt = { "menuone" },		   -- for cmp: remove "noselect"
@@ -74,7 +88,7 @@ for k, v in pairs(global_variables) do
 end
 
 -- Efficiency
-vim.cmd [[ 
+vim.cmd [[
   " Auto paste toggle before and after paste - Never Remove!!
 	  let &t_SI .= "\<Esc>[?2004h"
 	  let &t_EI .= "\<Esc>[?2004l"
@@ -88,3 +102,6 @@ vim.cmd [[
   " Shrug emoji into register
   let @s = "¯\_(ツ)_/¯"
 ]]
+
+-- For rainbow CSV plugin
+vim.g["disable_rainbow_key_mappings"] = 1

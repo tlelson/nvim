@@ -44,9 +44,12 @@ null_ls.setup({
 	debug = false,
 	sources = {
 		null_ls.builtins.completion.spell,
+		formatting.prettier, -- use .editorconfig
 
-		formatting.prettier,  -- use .editorconfig
-		diagnostics.jsonlint,  -- use .editorconfig
+		-- JSON
+		diagnostics.jsonlint, -- use .editorconfig
+		formatting.jq.with({ filetype = "json" }),
+
 		diagnostics.cfn_lint.with({ filetypes = { "cfn" } }),
 		-- default args to golangci use `--fast` which hide errors
 		diagnostics.golangci_lint.with({

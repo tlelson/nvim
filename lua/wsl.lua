@@ -1,4 +1,4 @@
--- Trying to fix clipboard buffer +
+-- Fixes clipboard buffer +
 vim.cmd [[
 	let g:clipboard = {
 	\   'name': 'myClipboard',

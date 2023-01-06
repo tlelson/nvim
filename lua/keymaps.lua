@@ -1,10 +1,29 @@
-local opts = { noremap = true, silent = true }
+-- [[ Basic Keymaps ]]
+-- Set <space> as the leader key
+-- See `:help mapleader`
+--  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
+--vim.g.mapleader = ' '
+--vim.g.maplocalleader = ' '
 
+-- Keymaps for better default experience
+-- See `:help vim.keymap.set()`
+vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+
+-- Remap for dealing with word wrap
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
+-- Diagnostic keymaps
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
+
+local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
 
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
-
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -63,4 +82,13 @@ keymap('v', '<leader>tr', ':ToggleTermSendVisualSelection<CR>', opts)
 keymap('n', '<leader>ta', ':TermExec cmd="!!"<CR>', opts)
 -- 1. Clear term 
 keymap('n', '<C-l>', ":TermExec cmd='clear'<CR>", opts)
--- 2. re-run last command (warn: required mods to the plugin)
+
+-- Plugin: Fugitive
+keymap("n", "<leader>gs", ":Git<CR>", opts)
+keymap("n", "<leader>gl", ":Gclog<CR>", opts)
+keymap("n", "<leader>ge", ":Gedit<CR>", opts)
+keymap("n", "<leader>gb", ":Git blame<CR>", opts)
+
+-- Plugin: Nerdcommenter
+vim.api.nvim_set_keymap("n", "<C-_>",  "<leader>c<Space>", {})
+vim.api.nvim_set_keymap("v", "<C-_>",  "<leader>c<Space>", {})
