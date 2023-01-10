@@ -70,7 +70,6 @@ require('packer').startup(function(use)
   use 'tpope/vim-abolish'
   use 'scrooloose/nerdcommenter'
   --use 'vim-airline/vim-airline'
-  --use 'airblade/vim-gitgutter'
   use 'mechatroner/rainbow_csv'
   -- Fuzzy Finding/Code navigation
   use {
@@ -135,6 +134,20 @@ require('gitsigns').setup {
     topdelete = { text = '‾' },
     changedelete = { text = '~' },
   },
+  on_attach = function(bufnr)
+    local gs = package.loaded.gitsigns
+
+    local function map(mode, l, r, opts)
+      opts = opts or {}
+      opts.buffer = bufnr
+      vim.keymap.set(mode, l, r, opts)
+    end
+
+    -- Actions
+    map({'n', 'v'}, '<leader>hs', ':Gitsigns stage_hunk<CR>')
+    map({'n', 'v'}, '<leader>hr', ':Gitsigns reset_hunk<CR>')
+    map('n', '<leader>hu', gs.undo_stage_hunk)
+  end
 }
 --
 -- [[ Configure Treesitter ]]
