@@ -59,6 +59,7 @@ local options = {
   scrollbind = false,
   cindent = false, 			   -- This should only be set for C files.  It jumps to 0 when you hit #
   autoindent = true,
+  list = true,
   listchars = "eol:$,tab:>-,trail:~,extends:>,precedes:<",
   textwidth = 90			   -- Arbitary but practical for splitscreen vim on a laptop. Override in ftplugin files
 }
