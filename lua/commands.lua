@@ -149,3 +149,30 @@ command! FzfQF call fzf#run({
       \ 'options': '--reverse --multi --bind=ctrl-a:select-all,ctrl-d:deselect-all --prompt "quickfix> "',
       \ })
 ]]
+
+-- RDD - Readme Driven Development
+-- written: Banner and I 
+-- Requires treesitter and toggleterm
+local ok, rdd = pcall(require, "readme_driven_dev")
+if not ok then
+  print("couldn't load readme_driven_dev!!")
+end
+--
+vim.api.nvim_create_user_command("RDDRunBlock", function(_)
+  local bufnr = vim.api.nvim_get_current_buf()
+  local line = vim.api.nvim_win_get_cursor(0)[1]
+  rdd.run_code(bufnr, line)
+end, {})
+
+vim.api.nvim_create_user_command("RDDRunSection", function(_)
+  local bufnr = vim.api.nvim_get_current_buf()
+  local currLine = vim.api.nvim_win_get_cursor(0)[1]
+  local sections = rdd.get_sections(bufnr)
+
+  for _, section in pairs(sections) do
+    if vim.treesitter.is_in_node_range(section.node, currLine) then
+      rdd.run_section(bufnr, section.code_blocks)
+    end
+  end
+end, {})
+

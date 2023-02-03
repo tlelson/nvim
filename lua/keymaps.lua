@@ -80,6 +80,8 @@ keymap('n', '<leader>tp',
 keymap('n', '<leader>tr', ':ToggleTermSendCurrentLine<CR>', opts)
 keymap('v', '<leader>tr', ':ToggleTermSendVisualSelection<CR>', opts)
 keymap('n', '<leader>ta', ':TermExec cmd="!!"<CR>', opts)
+keymap('n', '<leader>tb', ':RDDRunBlock<CR>', opts)
+keymap('n', '<leader>ts', ':RDDRunSection<CR>', opts)
 -- 1. Clear term 
 keymap('n', '<C-l>', ":TermExec cmd='clear'<CR>", opts)
 
