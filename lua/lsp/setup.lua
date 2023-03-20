@@ -48,7 +48,7 @@ end
 
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 local servers = {
-	"yamlls", "sumneko_lua", "gopls", "pylsp", "prosemd_lsp", "tflint", "tsserver",
+	"yamlls", "lua_ls", "gopls", "pylsp", "prosemd_lsp", "tflint", "tsserver",
 	"graphql", "vimls", "bashls", "powershell_es",
 }
 
