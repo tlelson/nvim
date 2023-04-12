@@ -78,7 +78,7 @@ keymap('n', '<leader>tq', ":TermExec cmd='exit'<CR>", opts)
 keymap('n', '<leader>tp',
   ":TermExec direction=vertical size=100 cmd='ipython --no-autoindent' dir='%:p:h'<CR>", opts)
 keymap('n', '<leader>tr', ':ToggleTermSendCurrentLine<CR>', opts)
-keymap('v', '<leader>tr', ':ToggleTermSendVisualSelection<CR>', opts)
+keymap('v', '<leader>tr', ':ToggleTermSendVisualLines<CR>', opts)
 keymap('n', '<leader>ta', ':TermExec cmd="!!"<CR>', opts)
 keymap('n', '<leader>tb', ':RDDRunBlock<CR>', opts)
 keymap('n', '<leader>ts', ':RDDRunSection<CR>', opts)
@@ -92,5 +92,9 @@ keymap("n", "<leader>ge", ":Gedit<CR>", opts)
 keymap("n", "<leader>gb", ":Git blame<CR>", opts)
 
 -- Plugin: Nerdcommenter
-vim.api.nvim_set_keymap("n", "<C-_>",  "<leader>c<Space>", {})
-vim.api.nvim_set_keymap("v", "<C-_>",  "<leader>c<Space>", {})
+keymap("n", "<C-_>",  "<leader>c<Space>", {})
+keymap("v", "<C-_>",  "<leader>c<Space>", {})
+
+-- Efficiency
+keymap("n", "<leader>sr",  ":%s#<C-R><C-W>#", {})
+keymap("v", "<leader>sr",  '"py | :%s#<C-R>p#', {})
