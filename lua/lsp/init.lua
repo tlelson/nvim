@@ -1,3 +1,3 @@
 require "lsp.setup"
 require "lsp.cmp"
-require "lsp.null-ls"
+--require "lsp.null-ls"

@@ -61,7 +61,7 @@ local options = {
   autoindent = true,
   list = true,
   listchars = "eol:$,tab:>-,trail:~,extends:>,precedes:<",
-  textwidth = 90			   -- Arbitary but practical for splitscreen vim on a laptop. Override in ftplugin files
+  textwidth = 90,			   -- Arbitary but practical for splitscreen vim on a laptop. Override in ftplugin files
 }
 
 vim.opt.shortmess:append "c"

@@ -40,7 +40,7 @@ vim.cmd [[
 -- FZF
 vim.cmd [[
   " By default it uses find and skips hidden files. This respects .ripgreprc
-  let $FZF_DEFAULT_COMMAND = 'rg --files 2> /dev/null'
+  let $FZF_DEFAULT_COMMAND = 'rg --files --no-ignore 2> /dev/null'
 
   " Have Ripgrep start from the current buffers git root, not the cwd of the
   " file first opened in vim. Think scenario when you jumped to a

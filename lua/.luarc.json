@@ -1,0 +1,30 @@
+{
+    "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
+    "Lua.workspace.library": [
+        "/home/delubu/.local/share/nvim/site/pack/packer/start/neodev.nvim/types/stable",
+        "/tmp/.mount_vimzRpGBh/usr/share/nvim/runtime",
+        "/home/delubu/.local/share/nvim/site/pack/packer/opt/nvim-treesitter-textobjects",
+        "/home/delubu/.local/share/nvim/site/pack/packer/start/LuaSnip",
+        "/home/delubu/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+        "/home/delubu/.local/share/nvim/site/pack/packer/start/cmp-path",
+        "/home/delubu/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+        "/home/delubu/.local/share/nvim/site/pack/packer/start/darkplus.nvim",
+        "/home/delubu/.local/share/nvim/site/pack/packer/start/fidget.nvim",
+        "/home/delubu/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+        "/home/delubu/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+        "/home/delubu/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+        "/home/delubu/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+        "/home/delubu/.local/share/nvim/site/pack/packer/start/mason.nvim",
+        "/home/delubu/.local/share/nvim/site/pack/packer/start/neodev.nvim",
+        "/home/delubu/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+        "/home/delubu/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+        "/home/delubu/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+        "/home/delubu/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+        "/home/delubu/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+        "/home/delubu/.local/share/nvim/site/pack/packer/start/packer.nvim",
+        "/home/delubu/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+        "/home/delubu/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
+        "${3rd}/luassert/library",
+        "${3rd}/luv/library"
+    ]
+}
