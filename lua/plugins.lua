@@ -72,6 +72,7 @@ require('packer').startup({function(use)
   use 'tpope/vim-unimpaired'
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb' -- Provides github linking for GBrowse! fugitive command
+  use 'tommcdo/vim-fubitive'  -- Bitbucket linking for GBrowse!
   use 'tpope/vim-sensible'
   use 'tpope/vim-surround'
   use 'tpope/vim-endwise'
