@@ -68,7 +68,7 @@ require('packer').startup({function(use)
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
-  --use "jose-elias-alvarez/null-ls.nvim"
+  use 'mfussenegger/nvim-lint'
   use 'tpope/vim-unimpaired'
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb' -- Provides github linking for GBrowse! fugitive command
