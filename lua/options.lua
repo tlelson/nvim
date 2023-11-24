@@ -84,7 +84,7 @@ local global_variables = {
   -- netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+', -- TODO: work out how to fix this
   
   -- ABC Bitbucket Settings for Fugitive/fubitive
-  fubitive_domain_pattern = "stash.abc-dev.net.au",
+  fubitive_domain_pattern = "bitbucket.ss.c0.abc.net.au",
   --fubitive_domain_context_path = "bitbucket",
 }
 

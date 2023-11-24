@@ -73,6 +73,7 @@ require('packer').startup({function(use)
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb' -- Provides github linking for GBrowse! fugitive command
   use 'tommcdo/vim-fubitive'  -- Bitbucket linking for GBrowse!
+  use 'shumphrey/fugitive-gitlab.vim'  -- Gitlab linking for GBrowse
   use 'tpope/vim-sensible'
   use 'tpope/vim-surround'
   use 'tpope/vim-endwise'
@@ -170,8 +171,18 @@ require('gitsigns').setup {
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  --ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'help', 'vim' },
-  ensure_installed = 'all',
+
+  ensure_installed = {
+    'bash',
+    'lua', 'python', 'rust',
+    'csv', 'css', 'c', 'cpp',
+    'dockerfile', 'dhall', 'diff',
+    'ssh_config', 'sql', 'passwd', 'markdown', 'make', 'json', 'javascript', 'html',
+    'graphql',
+    'go', 'gosum', 'gomod',
+    'gitcommit', 'gitignore', 'git_rebase', 'git_config',
+    'typescript', 'help', 'terraform', 'vim', 'vimdoc', 'yaml',
+  },
 
   highlight = {
     enable = true, -- false will disable the whole extension
