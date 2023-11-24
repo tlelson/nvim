@@ -259,7 +259,14 @@ require('nvim-treesitter.configs').setup {
 require('neodev').setup()
 
 -- Setup mason so it can manage external tooling
-require('mason').setup()
+local options = {
+  ensure_installed = { "lua-language-server", "cfn-lint" }, -- not an option from mason.nvim
+  max_concurrent_installers = 10,
+}
+require('mason').setup(options)
+vim.api.nvim_create_user_command("MasonInstallAll", function()
+  vim.cmd("MasonInstall " .. table.concat(options.ensure_installed, " "))
+end, {})
 
 -- Turn on lsp status information
 require('fidget').setup()
