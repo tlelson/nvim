@@ -48,8 +48,10 @@ end
 
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 local servers = {
-	"yamlls", "lua_ls", "gopls", "pylsp", "prosemd_lsp", "tflint", "tsserver",
-	"graphql", "vimls", "bashls", "powershell_es",
+  "lua_ls", "gopls", "pylsp", "prosemd_lsp", "tflint", "tsserver",
+  "graphql", "vimls", "bashls", "powershell_es", "purescriptls",
+  -- NOT 
+  -- yamlls: it can't handle cfn. Configure lintersn and formaters seperately
 }
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
