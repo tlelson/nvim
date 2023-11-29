@@ -1,6 +1,13 @@
 return {
   { "tpope/vim-rhubarb" }, -- Provides github linking for GBrowse! fugitive command },
-  { "tommcdo/vim-fubitive" }, -- Bitbucket linking for GBrowse! },
+  {
+    "tommcdo/vim-fubitive", -- Bitbucket linking for GBrowse! },
+    init = function()
+      -- ABC Bitbucket Settings for Fugitive/fubitive
+      vim.g.fubitive_domain_pattern = "bitbucket.ss.c0.abc.net.au"
+      --fubitive_domain_context_path = "bitbucket",
+    end,
+  },
   { "shumphrey/fugitive-gitlab.vim" }, -- Gitlab linking for GBrowse },
   {
     "tpope/vim-fugitive",
