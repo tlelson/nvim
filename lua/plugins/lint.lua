@@ -22,7 +22,7 @@ return {
           "--format",
           "parseable",
           "--ignore-checks",
-          "I3042",
+          "I3042,I3011,W3045",
           "--include-checks",
           "I",
           "--", -- must add this otherwise it reads the input file as a check

@@ -11,6 +11,7 @@ return {
   { "shumphrey/fugitive-gitlab.vim" }, -- Gitlab linking for GBrowse },
   {
     "tpope/vim-fugitive",
+    lazy = false,
     keys = {
       { "<leader>gs", "<cmd>Git<CR>", desc = "git status" },
       { "<leader>gl", "<cmd>Gclog<CR>", desc = "git log" },
