@@ -5,7 +5,7 @@
 -- DELETE LazyVim Maps
 --vim.keymap.del({ "i", "x", "n", "s" }, "<C-s>")
 --vim.keymap.del({ "n" }, "<C-_>")
-vim.keymap.del({ "t" }, "C-k") -- Disable in terminal as this is a bash combination
+vim.keymap.del({ "t" }, "<C-k>") -- Disable in terminal as this is a bash combination
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`

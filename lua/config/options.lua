@@ -11,6 +11,7 @@ local options = {
   backup = false, -- creates a backup file
   breakindent = true,
   --clipboard = "unnamedplus",               -- deleting text will overwrite the system clipboard. set to reg "+ manually
+  clipboard = "", -- 'unset' variable because its a default in lazyvim
   cmdheight = 2, -- more space in the neovim command line for displaying messages
   completeopt = { "menuone" }, -- for cmp: remove "noselect"
   conceallevel = 0, -- so that `` is visible in markdown files

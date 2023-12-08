@@ -15,4 +15,11 @@ return {
       { "<leader>ge", false }, -- use this for fugitive :Gedit. For now
     },
   },
+  {
+    "lewis6991/gitsigns.nvim",
+    keys = {
+      { "<leader>hs", mode = { "n", "v" }, ":Gitsigns stage_hunk<CR>", "Stage Hunk" },
+      { "<leader>hr", mode = { "n", "v" }, ":Gitsigns reset_hunk<CR>", "Reset Hunk" },
+    },
+  },
 }
