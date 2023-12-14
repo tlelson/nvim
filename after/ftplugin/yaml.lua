@@ -8,7 +8,7 @@ if not vim.endswith(vim.bo.filetype, "cfn") then -- don't endlessly loop
 
   for _, line in pairs(lines) do
     if line:find("AWSTemplateFormatVersion") ~= nil then
-      require("notify")("Cloudformation detected", "info", { title = "tims", timeout = 3000 })
+      require("notify")("Cloudformation detected", "info", { title = "tims" })
       vim.bo.filetype = "yaml.cfn"
     end
   end

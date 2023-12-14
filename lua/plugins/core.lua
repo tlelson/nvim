@@ -22,4 +22,12 @@ return {
       { "<leader>hr", mode = { "n", "v" }, ":Gitsigns reset_hunk<CR>", "Reset Hunk" },
     },
   },
+  {
+    "rcarriga/nvim-notify",
+    opts = {
+      top_down = false,
+      timeout = 1,
+      stages = "fade",
+    },
+  },
 }
