@@ -11,6 +11,7 @@ return {
         "cfn-lint",
         "golangci-lint",
         "bash-language-server",
+        "actionlint",
       },
     },
   },

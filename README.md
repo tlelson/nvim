@@ -1,4 +1,7 @@
-# 💤 LazyVim
+# Neovim config 
 
-A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
-Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
+This is based on [LazyVim](https://github.com/LazyVim/LazyVim). It makes a lot of nice UI configurations that would take me too long to work out.
+
+## Linters 
+
+Configure them [here](./lua/plugins/lint.lua).  Don't forget to add the linter to the list of [automatically installed executables](./lua/plugins/lsp.lua)
