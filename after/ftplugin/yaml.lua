@@ -7,7 +7,8 @@ if not vim.endswith(vim.bo.filetype, "cfn") then -- don't endlessly loop
   local lines = vim.api.nvim_buf_get_lines(0, 0, -1, 0)
 
   for _, line in pairs(lines) do
-    if line:find("AWSTemplateFormatVersion") ~= nil then
+    -- The only thing that is strictly required is a "Resources" block
+    if line:find("AWS::") ~= nil then
       require("notify")("Cloudformation detected", "info", { title = "tims" })
       vim.bo.filetype = "yaml.cfn"
     end
