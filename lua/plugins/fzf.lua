@@ -12,8 +12,14 @@ return {
     lazy = false,
     keys = {
       { "q/", ":History:<CR>", desc = "command history override (fzf)" },
-      { "<leader>rg", "<cmd>execute 'Rg ' . expand('<cword>')<CR>", desc = "ripgrep (fzf)" },
-      { "<leader>bl", "<cmd>execute 'BLines ' . expand('<cword>')<CR>", desc = "grep current bugger (fzf)" },
+      { "<leader>rg", "<cmd>execute 'Rg '<CR>", desc = "ripgrep (fzf)" },
+      { "<leader>rgw", "<cmd>execute 'Rg ' . expand('<cword>')<CR>", desc = "ripgrep for word cusor is on (fzf)" },
+      { "<leader>bl", "<cmd>execute 'BLines '<CR>", desc = "grep current buffer (fzf)" },
+      {
+        "<leader>blw",
+        "<cmd>execute 'BLines ' . expand('<cword>')<CR>",
+        desc = "grep current buffer for word cursor is on (fzf)",
+      },
     },
     init = function()
       vim.cmd([[
