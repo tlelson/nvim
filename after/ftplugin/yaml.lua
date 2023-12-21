@@ -11,6 +11,7 @@ if not vim.endswith(vim.bo.filetype, "cfn") then -- don't endlessly loop
     if line:find("AWS::") ~= nil then
       require("notify")("Cloudformation detected", "info", { title = "tims" })
       vim.bo.filetype = "yaml.cfn"
+      break
     end
   end
 end
