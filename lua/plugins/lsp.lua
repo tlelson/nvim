@@ -12,6 +12,7 @@ return {
         "golangci-lint",
         "bash-language-server",
         "actionlint",
+        "dhall-lsp",
       },
     },
   },
