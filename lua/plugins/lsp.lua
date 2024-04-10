@@ -35,7 +35,15 @@ return {
       servers = {
         -- servers bellow will be automatically installed with mason and loaded with lspconfig
         pyright = {},
-        gopls = {},
+        gopls = {
+          -- https://github.com/golang/tools/blob/master/gopls/doc/settings.md#buildflags-string
+          -- https://github.com/golang/tools/blob/master/gopls/doc/vim.md#configuration
+          settings = {
+            gopls = {
+              buildFlags = { "-tags=integration" },
+            },
+          },
+        },
         --golangci_lint_langserver = {},
       },
     },
