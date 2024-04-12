@@ -31,6 +31,8 @@ return {
     end,
     ---@class PluginLspOpts
     opts = {
+      -- :help lspconfig-all  →
+      -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
       ---@type lspconfig.options
       servers = {
         -- servers bellow will be automatically installed with mason and loaded with lspconfig
@@ -41,10 +43,13 @@ return {
           settings = {
             gopls = {
               buildFlags = { "-tags=integration" },
+              analyses = {
+                fieldalignment = false, -- annoying struct memory warnings
+              },
             },
           },
         },
-        --golangci_lint_langserver = {},
+        golangci_lint_ls = {},
       },
     },
   },
