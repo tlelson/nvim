@@ -1,4 +1,5 @@
 -- Add sub file type for special yaml files
+-- See filetype config in mfussenegger/nvim-lint config
 
 -- Cloudformation
 if not vim.endswith(vim.bo.filetype, "cfn") then -- don't endlessly loop
@@ -15,3 +16,11 @@ if not vim.endswith(vim.bo.filetype, "cfn") then -- don't endlessly loop
     end
   end
 end
+
+-- Github Actions
+vim.filetype.add({
+  pattern = {
+    [".*/.github/workflows/.*%.yml"] = "yaml.ghaction",
+    [".*/.github/workflows/.*%.yaml"] = "yaml.ghaction",
+  },
+})

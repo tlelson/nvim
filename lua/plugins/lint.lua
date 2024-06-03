@@ -8,7 +8,7 @@ return {
       cfn = { "cfn_lint" },
       go = { "golangcilint" },
       sh = { "shellcheck" },
-      yaml = { "actionlint" },
+      ghaction = { "actionlint" },
       --fish = { "fish" },
       -- Use the "*" filetype to run linters on all filetypes.
       -- ['*'] = { 'global linter' },
