@@ -2,6 +2,12 @@
 
 This is based on [LazyVim](https://github.com/LazyVim/LazyVim). It makes a lot of nice UI configurations that would take me too long to work out.
 
+## Language specific configuration
+e.g [ansible](http://www.lazyvim.org/extras/lang/ansible)
+
+### Yamlls
+Don't use this.  It isn't usefull and displays tag errors on cfn files.
+
 ## Linters
 
 Configure them [here](./lua/plugins/lint.lua).  Don't forget to add the linter to the list of [automatically installed executables](./lua/plugins/lsp.lua)
