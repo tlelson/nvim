@@ -19,10 +19,11 @@ vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 
 -- Diagnostic keymaps
 -- Set in LazyVim already ??
---vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
---vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
---vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
---vim.keymap.set("n", "<leader>dl", vim.diagnostic.setloclist)
+-- needed here (not in lspconfig) for when no lsp i.e cfn files
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
+vim.keymap.set("n", "<leader>dl", vim.diagnostic.setloclist)
 
 local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
