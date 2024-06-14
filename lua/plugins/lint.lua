@@ -19,6 +19,12 @@ return {
     -- or add custom linters.
     ---@type table<string,table>
     linters = {
+      markdownlint = {
+        args = {
+          "--disable",
+          "MD013",
+        },
+      },
       cfn_lint = {
         args = {
           "--format",
