@@ -6,7 +6,7 @@ return {
     linters_by_ft = {
       -- NOTE: `ensure_installed` by mason
       cfn = { "cfn_lint" },
-      go = { "golangcilint" },
+      --go = { "golangcilint" },  -- conflicts with the golangcilint_lsp configured in lspconfig
       sh = { "shellcheck" },
       ghaction = { "actionlint" },
       --fish = { "fish" },
