@@ -5,7 +5,6 @@
 -- DELETE LazyVim Maps
 --vim.keymap.del({ "i", "x", "n", "s" }, "<C-s>")
 --vim.keymap.del({ "n" }, "<C-_>")
-vim.keymap.del({ "t" }, "<C-k>") -- Disable in terminal as this is a bash combination
 vim.keymap.del({ "n" }, "H") -- Its mapped to bprevious
 vim.keymap.del({ "n" }, "L") -- Its mapped to bnext
 
