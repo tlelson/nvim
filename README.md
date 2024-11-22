@@ -2,6 +2,17 @@
 
 This is based on [LazyVim](https://github.com/LazyVim/LazyVim). It makes a lot of nice UI configurations that would take me too long to work out.
 
+## Debugging
+Startup Errors:
+`:messages` or `:NoiceAll`
+
+Deeper:
+Add following to `init.lua`:
+```lua
+vim.o.verbose = 3
+vim.o.verbosefile = vim.fn.stdpath("config") .. "/error_log"
+```
+
 ## Language specific configuration
 e.g [ansible](http://www.lazyvim.org/extras/lang/ansible)
 
