@@ -4,7 +4,7 @@ return {
     -- Event to trigger linters
     events = { "BufWritePost", "BufReadPost", "InsertLeave" },
     linters_by_ft = {
-      -- NOTE: `ensure_installed` by mason
+      -- NOTE: `ensure_installed` by project env
       cfn = { "cfn_lint" },
       --go = { "golangcilint" },  -- conflicts with the golangcilint_lsp configured in lspconfig
       sh = { "shellcheck" },
