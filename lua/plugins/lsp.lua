@@ -3,19 +3,17 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        -- N.B!! Language specific packages should be installed in their respective
-        -- Nix dev shell, NOT all environements.
-        --"gopls",
+        "gopls",
         "stylua",
         "shellcheck",
         "shfmt",
-        --"flake8",
-        --"mypy",
-        --"cfn-lint",
-        --"golangci-lint",
+        "flake8",
+        "mypy",
+        "cfn-lint",
+        "golangci-lint",
         "bash-language-server",
-        --"actionlint",
-        --"dhall-lsp",
+        "actionlint",
+        "dhall-lsp",
       },
     },
   },
@@ -38,7 +36,7 @@ return {
       ---@type lspconfig.options
       servers = {
         -- servers bellow will be automatically installed with mason and loaded with lspconfig
-        --pyright = {},
+        pyright = {},
         gopls = {
           -- https://github.com/golang/tools/blob/master/gopls/doc/settings.md#buildflags-string
           -- https://github.com/golang/tools/blob/master/gopls/doc/vim.md#configuration
