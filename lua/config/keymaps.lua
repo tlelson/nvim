@@ -29,6 +29,7 @@ local term_opts = { silent = true }
 
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
+-- TODO: Convert these keymaps to vim.keymap.set
 
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)

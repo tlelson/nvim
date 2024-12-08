@@ -32,7 +32,7 @@ return {
     ---@class PluginLspOpts
     opts = {
       -- :help lspconfig-all  →
-      -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+      -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
       ---@type lspconfig.options
       servers = {
         -- servers bellow will be automatically installed with mason and loaded with lspconfig

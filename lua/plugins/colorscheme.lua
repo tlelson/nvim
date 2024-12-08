@@ -5,7 +5,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "darkplus",
+      colorscheme = "darkplus", -- slate, habamax
     },
   },
 }
